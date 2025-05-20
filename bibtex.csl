@@ -52,28 +52,7 @@
   </macro>
   <macro name="citeKey">
     <text variable="citation-key"/>
-    <!-- <group delimiter="_">
-      <text macro="author-short" text-case="lowercase"/>
-      <text macro="issued-year"/>
-    </group> -->
   </macro>
-  <!-- <macro name="author-short">
-    <names variable="author">
-      <name form="short" delimiter="_" delimiter-precedes-last="always" et-al-min="11" et-al-use-first="10"/>
-      <substitute>
-        <names variable="editor"/>
-        <names variable="translator"/>
-        <choose>
-          <if type="bill book graphic legal_case legislation motion_picture report song" match="any">
-            <text variable="title" form="short"/>
-          </if>
-          <else>
-            <text variable="title" form="short"/>
-          </else>
-        </choose>
-      </substitute>
-    </names>
-  </macro> -->
   <macro name="issued-year">
     <date variable="issued">
       <date-part name="year"/>
@@ -177,7 +156,7 @@
         <text macro="pages" prefix=" pages={" suffix="}"/>
         <text variable="collection-title" prefix=" collection={" suffix="}"/>
         <!-- <text variable="keyword" prefix=" keywords={" suffix="}"/> -->
-        <!-- <text variable="language" prefix="language={" suffix="}"/> -->
+        <text variable="language" prefix="language={" suffix="}"/>
         <!-- <text variable="annote" prefix="annote={" suffix="}"/> -->
       </group>
     </layout>
