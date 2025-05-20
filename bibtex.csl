@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <style xmlns="http://purl.org/net/xbiblio/csl" class="in-text" version="1.0" demote-non-dropping-particle="sort-only" default-locale="en-US">
   <info>
-    <title>BibTeX generic citation style</title>
+    <title>BibTeX generic citation style (short)</title>
     <id>http://www.zotero.org/styles/bibtex</id>
     <link href="http://www.zotero.org/styles/bibtex" rel="self"/>
     <link href="http://www.bibtex.org/" rel="documentation"/>
@@ -51,12 +51,13 @@
     </choose>
   </macro>
   <macro name="citeKey">
-    <group delimiter="_">
+    <text variable="citation-key"/>
+    <!-- <group delimiter="_">
       <text macro="author-short" text-case="lowercase"/>
       <text macro="issued-year"/>
-    </group>
+    </group> -->
   </macro>
-  <macro name="author-short">
+  <!-- <macro name="author-short">
     <names variable="author">
       <name form="short" delimiter="_" delimiter-precedes-last="always" et-al-min="11" et-al-use-first="10"/>
       <substitute>
@@ -72,7 +73,7 @@
         </choose>
       </substitute>
     </names>
-  </macro>
+  </macro> -->
   <macro name="issued-year">
     <date variable="issued">
       <date-part name="year"/>
@@ -145,8 +146,8 @@
       <key variable="issued"/>
     </sort>
     <layout>
-      <text macro="zotero2bibtexType" prefix=" @"/>
-      <group prefix="{" suffix=" }" delimiter=", ">
+      <text macro="zotero2bibtexType" prefix="@"/>
+      <group prefix="{" suffix="&#10;}" delimiter=",&#10;">
         <text macro="citeKey"/>
         <text variable="publisher-place" prefix=" address={" suffix="}"/>
         <!--Fix This-->
@@ -155,29 +156,29 @@
         <text macro="edition" prefix=" edition={" suffix="}"/>
         <text variable="genre" prefix=" type={" suffix="}"/>
         <text variable="collection-title" prefix=" series={" suffix="}"/>
-        <text macro="title" prefix=" title={" suffix="}"/>
+        <text macro="title" prefix=" title={{" suffix="}}"/>
         <text variable="volume" prefix=" volume={" suffix="}"/>
-        <text variable="license" prefix=" rights={" suffix="}"/>
+        <!-- <text variable="license" prefix=" rights={" suffix="}"/> -->
         <text variable="ISBN" prefix=" ISBN={" suffix="}"/>
         <text variable="ISSN" prefix=" ISSN={" suffix="}"/>
         <text variable="call-number" prefix=" callNumber={" suffix="}"/>
         <text variable="archive_location" prefix=" archiveLocation={" suffix="}"/>
         <text variable="URL" prefix=" url={" suffix="}"/>
         <text variable="DOI" prefix=" DOI={" suffix="}"/>
-        <text variable="abstract" prefix=" abstractNote={" suffix="}"/>
-        <text variable="note" prefix=" note={" suffix="}"/>
+        <!-- <text variable="abstract" prefix=" abstractNote={" suffix="}"/> -->
+        <!-- <text variable="note" prefix=" note={" suffix="}"/> -->
         <text macro="number" prefix=" number={" suffix="}"/>
         <text macro="container-title"/>
         <text macro="publisher"/>
         <text macro="author" prefix=" author={" suffix="}"/>
         <text macro="editor-translator" prefix=" editor={" suffix="}"/>
         <text macro="issued-year" prefix=" year={" suffix="}"/>
-        <text macro="issued-month" prefix=" month=" suffix=""/>
+        <text macro="issued-month" prefix=" month={" suffix="}"/>
         <text macro="pages" prefix=" pages={" suffix="}"/>
         <text variable="collection-title" prefix=" collection={" suffix="}"/>
-        <text variable="keyword" prefix=" keywords={" suffix="}"/>
-        <text variable="language" prefix="language={" suffix="}"/>
-        <text variable="annote" prefix="annote={" suffix="}"/>
+        <!-- <text variable="keyword" prefix=" keywords={" suffix="}"/> -->
+        <!-- <text variable="language" prefix="language={" suffix="}"/> -->
+        <!-- <text variable="annote" prefix="annote={" suffix="}"/> -->
       </group>
     </layout>
   </bibliography>
