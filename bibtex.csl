@@ -60,7 +60,7 @@
   </macro>
   <macro name="issued-month">
     <date variable="issued">
-      <date-part name="month" form="short" strip-periods="true" text-case="lowercase"/>
+      <date-part name="month" form="numeric"/>
     </date>
   </macro>
   <macro name="author">
